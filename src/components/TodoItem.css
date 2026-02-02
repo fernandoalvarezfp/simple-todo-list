@@ -1,6 +1,7 @@
 .todo-item {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
   padding: 1rem;
   background-color: #fff;
   border: 1px solid #e0e0e0;
@@ -13,7 +14,19 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.todo-checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
 .todo-text {
   flex: 1;
   color: #333;
+  transition: all 0.2s;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: #999;
 }
