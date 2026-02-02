@@ -1,6 +1,6 @@
 import "./TodoItem.css";
 
-function TodoItem({ todo, onToggle }) {
+function TodoItem({ todo, onToggle, onDelete }) {
   return (
     <li className="todo-item">
       <input
@@ -12,6 +12,12 @@ function TodoItem({ todo, onToggle }) {
       <span className={`todo-text ${todo.completed ? "completed" : ""}`}>
         {todo.text}
       </span>
+      <button 
+        className="delete-button" 
+        onClick={() => onDelete(todo.id)}
+      >
+        Delete
+      </button>
     </li>
   );
 }

@@ -23,11 +23,15 @@ function App() {
     );
   };
 
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   return (
     <div className="app">
       <h1>Todo List</h1>
       <TodoForm onAddTodo={addTodo} />
-      <TodoList todos={todos} onToggleTodo={toggleTodo} />
+      <TodoList todos={todos} onToggleTodo={toggleTodo} onDeleteTodo={deleteTodo} />
     </div>
   );
 }
