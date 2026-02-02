@@ -27,11 +27,24 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  const editTodo = (id, newText) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, text: newText } : todo
+      )
+    );
+  };
+
   return (
     <div className="app">
       <h1>Todo List</h1>
       <TodoForm onAddTodo={addTodo} />
-      <TodoList todos={todos} onToggleTodo={toggleTodo} onDeleteTodo={deleteTodo} />
+      <TodoList 
+        todos={todos} 
+        onToggleTodo={toggleTodo} 
+        onDeleteTodo={deleteTodo}
+        onEditTodo={editTodo}
+      />
     </div>
   );
 }
